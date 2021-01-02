@@ -4,10 +4,10 @@ Flat Iron Phase 3 Data Science Project
 <img src= 
 "Images/Stop_Sign.jpg" 
          alt="Stop Sign Image" 
-         align="center"
-         width="300" height="300"> 
+         align="right"
+         width="275" height="275"> 
          
-<span>Photo by <a href="https://unsplash.com/@pedroplus?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pedro da Silva</a> on <a href="https://unsplash.com/s/photos/stop-sign?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+<!---<span>Photo by <a href="https://unsplash.com/@pedroplus?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pedro da Silva</a> on <a href="https://unsplash.com/s/photos/stop-sign?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>--->
 
 Prepared and Presented by:  **_Melody Peterson_**  
 [Presentation PDF](https://github.com/melodygr/Housing-Regression-Project/blob/main/presentation.pdf "Presentation PDF")
