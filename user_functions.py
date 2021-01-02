@@ -55,15 +55,21 @@ def print_confusion_matrices(model, X_train, X_test, y_train, y_test, y_train_pr
     
 def print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test_preds):
     
+    # Calculate scores
+    train_precision = precision_score(y_train, y_train_preds)
+    test_precision = precision_score(y_test, y_test_preds)
+    train_recall = recall_score(y_train, y_train_preds)
+    test_recall = recall_score(y_test, y_test_preds)
+    train_accuracy = accuracy_score(y_train, y_train_preds)
+    test_accuracy = accuracy_score(y_test, y_test_preds)
+    train_f1 = f1_score(y_train, y_train_preds)
+    test_f1 = f1_score(y_test, y_test_preds)
+    
     # Print scores
-    print("Precision Score: Train {0:.5f}, Test {1:.5f}"
-          .format(precision_score(y_train, y_train_preds), precision_score(y_test, y_test_preds)))
-    print("Recall Score:\t Train {0:.5f}, Test {1:.5f}"
-          .format(recall_score(y_train, y_train_preds), recall_score(y_test, y_test_preds)))
-    print("Accuracy Score:\t Train {0:.5f}, Test {1:.5f}"
-          .format(accuracy_score(y_train, y_train_preds), accuracy_score(y_test, y_test_preds)))
-    print("F1 Score:\t Train {0:.5f}, Test {1:.5f}"
-          .format(f1_score(y_train, y_train_preds), f1_score(y_test, y_test_preds)))
+    print("Precision Score: Train {0:.5f}, Test {1:.5f}".format(train_precision, test_precision))
+    print("Recall Score:\t Train {0:.5f}, Test {1:.5f}".format(train_recall, test_recall))
+    print("Accuracy Score:\t Train {0:.5f}, Test {1:.5f}".format(train_accuracy, test_accuracy))
+    print("F1 Score: \t Train {0:.5f}, Test {1:.5f}".format(train_f1, test_f1))
     print('----------------')
     
     # Create and print train & test confusion matrices 
@@ -89,22 +95,37 @@ def print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test
                class_names=np.unique(y_test).astype('str'),
                filled = True)
         plt.show()
+        
+    return train_precision, test_precision, train_recall, test_recall, train_accuracy, test_accuracy, train_f1, test_f1    
     
-def run_model(model, X_train, X_test, y_train, y_test):
+def run_model(model, X_train, X_test, y_train, y_test, fit_X = None, fit_y = None):
     
-#     model_metrics['model']=[]
+    if fit_X == None:
+        fit_X = X_train
+        fit_y = y_train
+    
+    model_metrics = [model]
     
     tic = time.time()
-    model.fit(X_train, y_train)
+    model.fit(fit_X, fit_y)
+    traintime = time.time() - tic
+    print('Fit time: ', traintime)
+    model_metrics.append(traintime)
     
     # Calculate train and test predictions
+    toc = time.time()
     y_test_preds = model.predict(X_test)
     y_train_preds = model.predict(X_train)
+    predtime = time.time() - toc
+    print('Prediction time: ', predtime)
+    model_metrics.append(predtime)
     
-    toc = time.time()
-    run_time = toc-tic
-    print('Run time: ', run_time)
-    print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test_preds)
+    train_precision, test_precision, train_recall, test_recall, train_accuracy, test_accuracy, train_f1, test_f1 = print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test_preds)
+    
+    model_metrics.extend([train_precision, test_precision, train_recall, test_recall, train_accuracy, test_accuracy, train_f1, test_f1])
+    
+    return model_metrics
+    
     
 def plot_feature_importances(model, X_train):
     n_features = X_train.shape[1]
