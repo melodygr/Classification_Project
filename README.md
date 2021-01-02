@@ -2,7 +2,7 @@
 Flat Iron Phase 3 Data Science Project
 
 <img src= 
-"images/skyline.jpg" 
+"images/Stop_Sign.jpg" 
          alt="Stop Sign Image" 
          align="right"
          width="200" height="200"> 
