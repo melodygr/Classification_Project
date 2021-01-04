@@ -128,7 +128,7 @@ def run_model(model, name, X_train, X_test, y_train, y_test, metrics_df, fit_X =
     
     return metrics_df
 
-def plot_ten_feature_importances(model, X_train):
+def plot_ten_feature_importances(model, X_train, name):
 
     ten_features = sorted(list(zip(model.feature_importances_, X_train.columns.values)), reverse=True)[:10]
     importances, labels = map(list,zip(*reversed(ten_features)))
@@ -137,6 +137,9 @@ def plot_ten_feature_importances(model, X_train):
     plt.yticks(np.arange(10), labels) 
     plt.xlabel('Feature importance')
     plt.ylabel('Feature')
+    file_name = ('Images/feature_importance', name, '.png')
+    print(filename)
+    plt.savefig(file_name)
     
 def plot_feature_importances(model, X_train):
     
