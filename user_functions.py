@@ -137,8 +137,8 @@ def plot_ten_feature_importances(model, X_train, name):
     plt.yticks(np.arange(10), labels) 
     plt.xlabel('Feature importance')
     plt.ylabel('Feature')
-    file_name = ('Images/feature_importance', name, '.png')
-    print(filename)
+    file_name = 'Images/feature_importance' + name + '.png'
+    print(file_name)
     plt.savefig(file_name)
     
 def plot_feature_importances(model, X_train):
