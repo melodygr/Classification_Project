@@ -84,7 +84,6 @@ def print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test
         y_score = model.fit(X_train, y_train).decision_function(X_test)
         false_positive_rate, true_positive_rate, thresholds = roc_curve(y_test, y_score)
         print_roc(false_positive_rate, true_positive_rate)
-        print('----------------')
     
     if str(model)[:3] == 'Dec':
         false_positive_rate, true_positive_rate, thresholds = roc_curve(y_test, y_test_preds)
@@ -98,13 +97,13 @@ def print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test
         
     return train_precision, test_precision, train_recall, test_recall, train_accuracy, test_accuracy, train_f1, test_f1    
     
-def run_model(model, X_train, X_test, y_train, y_test, fit_X = None, fit_y = None):
+def run_model(model, name, X_train, X_test, y_train, y_test, metrics_df, fit_X = None, fit_y = None):
     
-    if fit_X == None:
+    if fit_X.empty:
         fit_X = X_train
         fit_y = y_train
     
-    model_metrics = [model]
+    model_metrics = [name, model]
     
     tic = time.time()
     model.fit(fit_X, fit_y)
@@ -124,10 +123,23 @@ def run_model(model, X_train, X_test, y_train, y_test, fit_X = None, fit_y = Non
     
     model_metrics.extend([train_precision, test_precision, train_recall, test_recall, train_accuracy, test_accuracy, train_f1, test_f1])
     
-    return model_metrics
+    series = pd.Series(model_metrics, index = metrics_df.columns)
+    metrics_df = metrics_df.append(series, ignore_index=True)
     
+    return metrics_df
+
+def plot_ten_feature_importances(model, X_train):
+
+    ten_features = sorted(list(zip(model.feature_importances_, X_train.columns.values)), reverse=True)[:10]
+    importances, labels = map(list,zip(*reversed(ten_features)))
+    plt.figure(figsize=(8,8))
+    plt.barh(range(10), importances, align='center') 
+    plt.yticks(np.arange(10), labels) 
+    plt.xlabel('Feature importance')
+    plt.ylabel('Feature')
     
 def plot_feature_importances(model, X_train):
+    
     n_features = X_train.shape[1]
     plt.figure(figsize=(8,8))
     plt.barh(range(n_features), model.feature_importances_, align='center') 
@@ -135,39 +147,3 @@ def plot_feature_importances(model, X_train):
     plt.xlabel('Feature importance')
     plt.ylabel('Feature')
     
-''' Yish's code
-
-def evaluate(model, name):
-
-    output = ('model': name)
-    start1 = time.time()
-    model.fit(x_train, y_train)
-    traintime = time.time() - start1
-    
-    # training metrics
-    
-    trainpred = model.predict(x_train)
-    output['train_precision'] = precision_score(y_train, trainpred)
-    output['train_recall'] = recall_score(y_train, trainpred)
-    output['train_accuracy'] = accuracy_score(y_train, trainpred)
-    output['train_f1'] = f1_score(y_train, trainpred)
-    output['train_time'] = traintime
-    
-    # testing metrics
-    
-    start2 = time.time()
-    pred = model.predict(x_test)
-    testtime = time.time() - start2
-    
-    output['test_precision'] = precision_score(y_test, pred)
-    output['test_recall'] = recall_score(y_test, pred)
-    output['test_accuracy'] = accuracy_score(y_test, pred)
-    output['test_f1'] = f1_score(y_test, pred)
-    output['test_time'] = testtime    
-    
-    # confusion matrix for test set
-    
-    conf = pd.crosstab(y_test, pred)
-    
-    return output, conf
-    '''    
