@@ -43,8 +43,8 @@ For the final model, you can see in this graph how the model classified the data
 
 ### Model Parameter Comparison
 The features importances of the two top performing model types show very little in common.
-![Forest2](https://github.com/melodygr/Classification_Project/blob/main/Images/feature_importanceforest2.png "Forest2")
-![xgb_clf4](https://github.com/melodygr/Classification_Project/blob/main/Images/feature_importancexgb_clf4.png "xgb_clf4")  
+![Forest2](https://github.com/melodygr/Classification_Project/blob/main/Images/forest_feat.png "Forest2")
+![xgb_clf4](https://github.com/melodygr/Classification_Project/blob/main/Images/xgb_feat.png "xgb_clf4")  
 
 ### Conclusions  
 * Call Type of 911 appears to be important to the models
