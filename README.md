@@ -50,12 +50,14 @@ By holding all variables except one constant at their mean, we can visualize the
 ![Single Var Plots](https://github.com/swzoeller/Housing-Regression-Project/blob/main/images/single_var_plots.png "Single Var Plots")
 
 ### Conclusions  
-* Significant features in  luxury homes include waterfront property, location (zip codes, longitude), and square foot above ground
-* Having more floors or bedrooms does not necessarily imply higher sale price
-* Bottom Line: location and square footage are the most important features in determining sale price
+* Analysis of misclassified data
+* 
+* 
 
 ### Next Steps / Future Work  
-1. Refine dataset (expand and cut certain zip codes)
-1. Subset model for different price ranges
-1. Investigate polynomial relationships and interactions between variables in greater detail
+1. Further analyze unknown or missing values
+1. Update ‘Arrest Flag’ with arrest values from ‘Stop Resolution’
+1. Try no SMOTE
+1. Tune Support Vector Classification
+
 
