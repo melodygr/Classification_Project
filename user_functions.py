@@ -51,6 +51,7 @@ def print_confusion_matrices(model, X_train, X_test, y_train, y_test, y_train_pr
     plot_confusion_matrix(model, X_test, y_test, values_format='.4g')
     print("Number of mislabeled test points out of a total {} points : {}, percentage = {:.4%}"
           .format(X_test.shape[0], (y_test != y_test_preds).sum(), (y_test != y_test_preds).sum()/X_test.shape[0]))
+    plt.savefig('Images/confusion_matrix.png')
     plt.show()
     
 def print_metrics(model, X_train, X_test, y_train, y_test, y_train_preds, y_test_preds):
