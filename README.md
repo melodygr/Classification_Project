@@ -6,15 +6,23 @@ Flat Iron Data Science Project - Phase 3
          align="right"
          width="275" height="275"> 
          
+<!---Photo by Kevork Kurdoghlian on Unsplash--->       
 <!---<span>Photo by <a href="https://unsplash.com/@pedroplus?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pedro da Silva</a> on <a href="https://unsplash.com/s/photos/stop-sign?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>--->
 Prepared and Presented by:  **_Melody Peterson_**  
 [Presentation PDF](https://github.com/melodygr/Classification_Project/blob/main/Terry%20Stop%20Presentation.pdf "Presentation PDF")
 
 ### Business Problem    
-King County Real Estate is a luxury real estate company serving sellers and buyers in the high income earning areas of King County, Washington. The company wants to understand which features translate to higher housing prices in these areas, as well as develop a model to predict price based on housing features.
+A Terry stop in the United States allows the police to briefly detain a person based on reasonable suspicion of involvement in criminal activity. Reasonable suspicion is a lower standard than probable cause which is needed for arrest. When police stop and search a pedestrian, this is commonly known as a stop and frisk. When police stop an automobile, this is known as a traffic stop. If the police stop a motor vehicle on minor infringements in order to investigate other suspected criminal activity, this is known as a pretextual stop. - Wikipedia
+
+This classification project attempts to determine the possible demographic variables that determine the outcome of a Terry stop.
 
 ### Data    
-This project uses the King County House Sales dataset, which can be found in kc_house_data.csv in the data folder in this repo. The description of the column names can be found in column_names.md in the same folder. In an effort to narrow the scope of the data to suit our business problem, we also obtained census data of individual income tax returns by zip code for the state of Washington.  An editted version of this data can be found in agi_zip_code.xlsx in the data folder in this repo.  The cleaning and selection of relevent data from this dataset can be seen in the [Additional_Data](https://github.com/swzoeller/Housing-Regression-Project/blob/main/Additional_Data.ipynb "Additional Data Notebook") notebook in the repo.
+This data represents records of police reported stops under Terry v. Ohio, 392 U.S. 1 (1968). 
+The dataset was created on 04/12/2017 and first published on 05/22/2018 and is provided by the city of Seattle, WA.
+There were 45,317 rows and 23 variables
+Classification target is ‘Arrest Flag’
+Initial ‘Arrest Flag’ distribution  ‘N’ - 42585, ‘Y’ - 2732
+
 
 ### Modeling Process
 Following the OSEMN (Obtain, Scrub, Explore, Model, Interpret) data science framework, we began with an understanding of our business problem and the acquisition of data.  We then followed an iterative process of cleaning and exploring the data, checking for issues with modeling assumptions, creating and testing a model, interpreting the model, and reevaluating the data.
