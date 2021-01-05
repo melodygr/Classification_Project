@@ -24,21 +24,24 @@ In the initial data cleaning/scrubbing phase, place holder values and missing va
 ![Subject Age Group](https://github.com/melodygr/Classification_Project/blob/main/Images/subject_age_group.png "Subject Age Group")
 ![Precinct](https://github.com/melodygr/Classification_Project/blob/main/Images/precinct.png "Precinct")
 
-Once the data had been cleaned, initial models were run to help determine if there were any confounding variables as suspected in Stop Resolution.  Issues were found with a feature engineered category of Subject ID Unknown where none of the data points in this categry were positive for the target.  Date was also proving to be confounding because none of the positive target records had occured before a certain date.    
+Once the data had been cleaned, initial models were run to help determine if there were any confounding variables as suspected in Stop Resolution.  Issues were found with a feature engineered category of Subject Known Unidentified where none of the data points in this category were positive for the target.  Date was also proving to be confounding because none of the positive target records had occured before a certain date.    
 ![Subject ID Comparison](https://github.com/melodygr/Classification_Project/blob/main/Images/subj_known_comparison.png "Subject ID comparison")  
 ![Date Dual Plot](https://github.com/melodygr/Classification_Project/blob/main/Images/date_dual_plot.png "Date Dual Plot")  
 
 An initial baseline model was created using a dummy classifier, and then several models were run and parameters tuned to find the model accurate momdel.  
 ![Model Performance](https://github.com/melodygr/Classification_Project/blob/main/Images/model_performance.png "Model Performance") 
-
+<img src= 
+"Images/model_performance.png" 
+         alt="Model Performance" 
+         align="center"
+         width="500" height="300">  
+         
 ### Misclassified Data
 For the final model, you can see in this graph how the model classified the data versus the actual classifications of the data.
-
 ![Confusion Matrix](https://github.com/melodygr/Classification_Project/blob/main/Images/confusion_matrix.png "Confusion Matrix")  
 
 ### Model Parameter Comparison
 The features importances of the two top performing model types show very little in common.
-
 ![Forest2](https://github.com/melodygr/Classification_Project/blob/main/Images/feature_importanceforest2.png "Forest2")
 ![xgb_clf4](https://github.com/melodygr/Classification_Project/blob/main/Images/feature_importancexgb_clf4.png "xgb_clf4")  
 
