@@ -28,7 +28,8 @@ Once the data had been cleaned, initial models were run to help determine if the
 ![Subject ID Comparison](https://github.com/melodygr/Classification_Project/blob/main/Images/subj_known_comparison.png "Subject ID comparison")  
 ![Date Dual Plot](https://github.com/melodygr/Classification_Project/blob/main/Images/date_dual_plot.png "Date Dual Plot")  
 
-An initial baseline model was created using a dummy classifier, and then several models were run and parameters tuned to find the most accurate model.
+An initial baseline model was created using a dummy classifier, and then several models were run and parameters tuned to find the most accurate model.  
+
 <img src= 
 "Images/model_performance.png" 
          alt="Model Performance" 
@@ -36,7 +37,8 @@ An initial baseline model was created using a dummy classifier, and then several
          width="500" height="300">  
          
 ### Misclassified Data
-For the final model, you can see in this graph how the model classified the data versus the actual classifications of the data.
+For the final model, you can see in this graph how the model classified the data versus the actual classifications of the data.  Test accuracy of 67% means
+32.46% of data misclassified.  Of 708 arrests, 35% were classified as arrests.  There were 245 true positives and 63% of positives were misclassified.  
 ![Confusion Matrix](https://github.com/melodygr/Classification_Project/blob/main/Images/confusion_matrix.png "Confusion Matrix")  
 
 ### Model Parameter Comparison
