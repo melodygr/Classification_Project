@@ -42,9 +42,9 @@ By holding all variables except one constant at their mean, we can visualize the
 ![Single Var Plots](https://github.com/swzoeller/Housing-Regression-Project/blob/main/images/single_var_plots.png "Single Var Plots")
 
 ### Conclusions  
-* Analysis of misclassified data
-* 
-* 
+* Call Type of 911 appears to be important to the models
+* Other 'Unknown' variables need to be reassessed
+* Recommend engineering new target and features and remodeling
 
 ### Next Steps / Future Work  
 1. Further analyze unknown or missing values
