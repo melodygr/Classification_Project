@@ -1,5 +1,5 @@
 # Analysis of Terry Stops in Seattle
-Flat Iron Data Science Project - Phase 3
+Flatiron Data Science Project - Phase 3
 <img src= 
 "Images/No_Stopping.jpg" 
          alt="Stop Sign Image" 
@@ -28,18 +28,19 @@ Once the data had been cleaned, initial models were run to help determine if the
 ![Subject ID Comparison](https://github.com/melodygr/Classification_Project/blob/main/Images/subj_known_comparison.png "Subject ID comparison")  
 ![Date Dual Plot](https://github.com/melodygr/Classification_Project/blob/main/Images/date_dual_plot.png "Date Dual Plot")  
 
-After creating an initial baseline model, several of the continuous variables were log transformed and scaled to make them more normally distributed and comparable to each other.
-![Logged_Histograms](https://github.com/swzoeller/Housing-Regression-Project/blob/main/images/logged_histograms.png "Logged Histograms") 
+An initial baseline model was created using a dummy classifier, and then several models were run and parameters tuned to find the model accurate momdel.  
+![Model Performance](https://github.com/melodygr/Classification_Project/blob/main/Images/model_performance.png "Model Performance") 
 
-We then iterated through the modeling process, interpreting our results after each model, and making changes and adjustments based on statistical significance of the variables.  For our final model, you can see in this graph how our predictions match up with the actual data on which we trained the model as well as on predicting the test data value for Sale Price.
+### Misclassified Data
+For the final model, you can see in this graph how the model classified the data versus the actual classifications of the data.
 
-![Predictions](https://github.com/swzoeller/Housing-Regression-Project/blob/main/images/predictions.png "Predictions")
+![Confusion Matrix](https://github.com/melodygr/Classification_Project/blob/main/Images/confusion_matrix.png "Confusion Matrix")  
 
-![Predictions_Test](https://github.com/swzoeller/Housing-Regression-Project/blob/main/images/predictions_test.png "Predictions Test")
+### Model Parameter Comparison
+The features importances of the two top performing model types show very little in common.
 
-By holding all variables except one constant at their mean, we can visualize the relationship between sale price and any given variable as predicted by our model.
-
-![Single Var Plots](https://github.com/swzoeller/Housing-Regression-Project/blob/main/images/single_var_plots.png "Single Var Plots")
+![Forest2](https://github.com/melodygr/Classification_Project/blob/main/Images/feature_importanceforest2.png "Forest2")
+![xgb_clf4](https://github.com/melodygr/Classification_Project/blob/main/Images/feature_importancexgb_clf4.png "xgb_clf4")  
 
 ### Conclusions  
 * Call Type of 911 appears to be important to the models
