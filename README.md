@@ -1,14 +1,14 @@
 # Analysis of Terry Stops in Seattle
 Flat Iron Data Science Project - Phase 3
 <img src= 
-"Images/Stop_Sign.jpg" 
+"Images/No_Stopping.jpg" 
          alt="Stop Sign Image" 
          align="right"
          width="275" height="275"> 
          
 <!---<span>Photo by <a href="https://unsplash.com/@pedroplus?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pedro da Silva</a> on <a href="https://unsplash.com/s/photos/stop-sign?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>--->
 Prepared and Presented by:  **_Melody Peterson_**  
-[Presentation PDF](https://github.com/melodygr/Housing-Regression-Project/blob/main/presentation.pdf "Presentation PDF")
+[Presentation PDF](https://github.com/melodygr/Classification_Project/blob/main/Terry%20Stop%20Presentation.pdf "Presentation PDF")
 
 ### Business Problem    
 King County Real Estate is a luxury real estate company serving sellers and buyers in the high income earning areas of King County, Washington. The company wants to understand which features translate to higher housing prices in these areas, as well as develop a model to predict price based on housing features.
