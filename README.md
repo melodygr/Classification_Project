@@ -39,8 +39,13 @@ An initial baseline model was created using a dummy classifier, and then several
 ### Misclassified Data
 For the final model, you can see in this graph how the model classified the data versus the actual classifications of the data.  Test accuracy of 67% means
 32.46% of data misclassified.  Of 708 arrests, 35% were classified as arrests.  There were 245 true positives and 63% of positives were misclassified.  
-![Confusion Matrix](https://github.com/melodygr/Classification_Project/blob/main/Images/confusion_matrix.png "Confusion Matrix")  
-
+  
+<img src= 
+"Images/conf_matrix_xgb4.png" 
+         alt="Confusion Matrix" 
+         align="center"
+         width="350" height="300">  
+         
 ### Model Parameter Comparison
 The features importances of the two top performing model types show very little in common.
 ![Forest2](https://github.com/melodygr/Classification_Project/blob/main/Images/forest_feat.png "Forest2")
